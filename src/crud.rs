@@ -176,7 +176,7 @@ pub async fn fetch_all_personal_chat_msg_with_id(
     pool: &sqlx::Pool<sqlx::Postgres>,
     id: String,
 ) -> Result<Vec<sqlx::postgres::PgRow>, sqlx::Error> {
-    let fetched_personal_chat_msgs = sqlx::query("select * from personal_chat_msg where from_id = $1")
+    let fetched_personal_chat_msgs = sqlx::query("select * from group_chat_msg where from_id = $1 or to_id = $1")
         .bind(id)
         .fetch_all(pool)
         .await?;

@@ -5,14 +5,14 @@ pub struct User {
     pub password: String,
 }
 
-#[derive(serde::Serialize, serde::Deserialize, Debug)]
+#[derive(serde::Serialize, serde::Deserialize, Debug, sqlx::FromRow)]
 pub struct Group {
     pub id: String,
     pub name: String,
     pub datetime: String,
 }
 
-#[derive(serde::Serialize, serde::Deserialize, Debug)]
+#[derive(serde::Serialize, serde::Deserialize, Debug, sqlx::FromRow)]
 pub struct GroupChatMsg {
     pub id: String,
     pub group_id: String,
@@ -20,7 +20,7 @@ pub struct GroupChatMsg {
     pub message: String,
 }
 
-#[derive(serde::Serialize, serde::Deserialize, Debug)]
+#[derive(serde::Serialize, serde::Deserialize, Debug, sqlx::FromRow)]
 pub struct PersonalChatMsg {
     pub id: String,
     pub from_id: String,
