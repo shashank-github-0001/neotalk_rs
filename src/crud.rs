@@ -138,3 +138,25 @@ pub async fn fetch_all_users_with_id(
         .await?;
     return Ok(fetched_users);
 }
+
+#[allow(dead_code)]
+pub async fn fetch_all_users(
+    pool: &sqlx::Pool<sqlx::Postgres>,
+) -> Result<Vec<sqlx::postgres::PgRow>, sqlx::Error> {
+    let all_users = sqlx::query("select * from users")
+        .fetch_all(pool)
+        .await?;
+    return Ok(all_users);
+}
+
+#[allow(dead_code)]
+pub async fn fetch_all_groups(
+    pool: &sqlx::Pool<sqlx::Postgres>,
+) -> Result<Vec<sqlx::postgres::PgRow>, sqlx::Error> {
+    let all_groups = sqlx::query("select * from groups")
+        .fetch_all(pool)
+        .await?;
+    return Ok(all_groups);
+}
+
+#[allow(dead_code)]
