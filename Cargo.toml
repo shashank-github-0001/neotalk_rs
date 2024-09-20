@@ -1,0 +1,14 @@
+[package]
+name = "neotalk_rs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+chrono = "0.4.38"
+dotenv = "0.15.0"
+postgres = "0.19.9"
+serde = { version = "1.0.210", features = ["derive"] }
+serde_json = "1.0.128"
+sqlx = { version = "0.8.2", features = ["postgres", "runtime-tokio", "tls-native-tls", "uuid"] }
+tokio = { version = "1.40.0", features = ["full"] }
+uuid = { version = "1.10.0", features = ["serde", "v4"] }

@@ -1,0 +1,8 @@
+* personal chat app
+
+** features
+   - ( ) add end to end encryption
+   - ( ) make this a 2 way application
+   - ( ) use clip for commands and shit
+   - ( ) use axum for communicating with server and shit
+   - ( ) make a settings file for storing last seen data and other important information
