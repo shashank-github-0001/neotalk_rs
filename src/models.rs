@@ -28,3 +28,9 @@ pub struct PersonalChatMsg {
     pub datetime: String,
     pub message: String,
 }
+
+#[derive(serde::Deserialize, Debug)]
+pub struct Usr {
+    pub username: String,
+    pub password: String,
+}
