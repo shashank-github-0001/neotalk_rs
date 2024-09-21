@@ -52,7 +52,7 @@ pub async fn insert_groups(
         name: groups_name,
         datetime: chrono::Utc::now().to_string(),
     };
-    let insert_groups = sqlx::query("INSERT INTO users (id, username, password) VALUES ($1, $2, $3)")
+    let insert_groups = sqlx::query("INSERT INTO groups (id, name, datetime) VALUES ($1, $2, $3)")
         .bind(new_groups.id)
         .bind(new_groups.name)
         .bind(new_groups.datetime)

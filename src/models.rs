@@ -34,3 +34,8 @@ pub struct Usr {
     pub username: String,
     pub password: String,
 }
+
+#[derive(serde::Deserialize, Debug)]
+pub struct Grp {
+    pub name: String,
+}

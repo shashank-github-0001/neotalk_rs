@@ -17,7 +17,8 @@ async fn main() -> Result<(), sqlx::Error> {
         .await?;
     let mut app = tide::with_state(AppState { pool: pool.clone() });
     app.at("/").get(apis::get_user_list);
-    app.at("/create").post(apis::post_user);
+    app.at("/create_user").post(apis::post_user);
+    app.at("/create_group").post(apis::post_group);
     app.listen("0.0.0.0:8000").await?;
     return Ok(());
 }
